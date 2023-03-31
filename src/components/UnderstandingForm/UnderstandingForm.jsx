@@ -14,6 +14,7 @@ const UnderstandingForm = () => {
         type: 'SET_UNDERSTANDING',
         payload: understanding
       })
+      setUnderstanding('');
       history.push('/support');
     }
     else {
@@ -31,6 +32,7 @@ const UnderstandingForm = () => {
           label="Understanding?"
           variant="outlined"
           type="number"
+          value={understanding}
         />
         <Button onClick={handleClick} variant="contained">Next</Button>
       </div>

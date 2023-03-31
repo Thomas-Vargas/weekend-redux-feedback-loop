@@ -14,6 +14,7 @@ const FeelingForm = () => {
         type: 'SET_FEELING',
         payload: feeling
       })
+      setFeeling('');
       history.push('/understanding')
     }
     else {
@@ -31,6 +32,7 @@ const FeelingForm = () => {
           label="What are you feeling?"
           variant="outlined"
           type="number"
+          value={feeling}
         />
         <Button onClick={handleClick} variant="contained">
           Next
