@@ -30,6 +30,19 @@ const Admin = () => {
       });
   };
 
+  const deleteFeedback = (id) => {
+    console.log(id);
+    axios
+      .delete(`/feedback/${id}`)
+      .then(result => {
+        console.log('Successfully delete feedback with id', id);
+        getAllFeedback();
+      })
+      .catch(error => {
+        console.log('Error deleting feedback', error)
+      })
+  }
+
   useEffect(() => {
     getAllFeedback();
   }, []);
@@ -69,7 +82,7 @@ const Admin = () => {
                     {individualFeedback.comments}
                   </TableCell>
                   <TableCell align="right">
-                    <Button variant="contained" startIcon={<DeleteIcon />}>
+                    <Button onClick={() => deleteFeedback(individualFeedback.id)} variant="contained" startIcon={<DeleteIcon />}>
                       Delete
                     </Button>
                   </TableCell>
