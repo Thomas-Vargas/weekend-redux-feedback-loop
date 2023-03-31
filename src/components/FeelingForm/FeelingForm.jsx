@@ -1,12 +1,24 @@
 import { TextField, Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch } from 'react-redux';
 
 const FeelingForm = () => {
+  const [feeling, setFeeling] = useState('');
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleClick = () => {
-    console.log("hello");
-    history.push('/understanding')
+    if (feeling != '') {
+      dispatch({
+        type: 'SET_FEELING',
+        payload: feeling
+      })
+      history.push('/understanding')
+    }
+    else {
+      alert('Please provide input.')
+    }
   };
 
   return (
@@ -14,7 +26,7 @@ const FeelingForm = () => {
       <h1>How are you feeling today?</h1>
       <div className="flex">
         <TextField
-          onChange={(event) => console.log(event.target.value)}
+          onChange={(event) => setFeeling(event.target.value)}
           id="outlined-basic"
           label="What are you feeling?"
           variant="outlined"
