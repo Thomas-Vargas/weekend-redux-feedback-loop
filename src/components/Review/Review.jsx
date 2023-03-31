@@ -5,7 +5,7 @@ const Review = () => {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push('/')
+    history.push('/success')
   }
 
   return (
