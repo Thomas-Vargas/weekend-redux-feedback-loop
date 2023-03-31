@@ -5,6 +5,7 @@ import FeelingForm from '../FeelingForm/FeelingForm';
 import { HashRouter as Router, Route, Link} from "react-router-dom";
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 import SupportedForm from '../SupportedForm/SupportedForm';
+import CommentForm from '../CommentsForm/ComentsForm';
 
 function App() {
 
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path='/support' exact>
           <SupportedForm />
+        </Route>
+        <Route path='/comment' exact>
+          <CommentForm />
         </Route>
       </Router>
     </div>
