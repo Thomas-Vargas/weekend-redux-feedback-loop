@@ -26,7 +26,7 @@ const FeelingForm = () => {
   };
 
   const handleChange = (event) => {
-    if (feeling + event.target.value <= 5) {
+    if (feeling + event.target.value <= 5 && event.target.value >= 0) {
       setFeeling(event.target.value);
     }
   };
@@ -34,7 +34,7 @@ const FeelingForm = () => {
   return (
     <>
       <div className="flex">
-        <Card sx={{ minWidth: 350 }}>
+        <Card sx={{ minWidth: 400 }}>
           <CardContent>
             <Typography
               sx={{ fontSize: 20 }}

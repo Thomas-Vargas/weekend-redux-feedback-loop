@@ -30,7 +30,7 @@ const UnderstandingForm = () => {
   };
 
   const handleChange = (event) => {
-    if (understanding + event.target.value <= 5) {
+    if (understanding + event.target.value <= 5 && event.target.value >= 0) {
       setUnderstanding(event.target.value);
     }
   };

@@ -30,7 +30,7 @@ const SupportedForm = () => {
   };
 
   const handleChange = (event) => {
-    if (support + event.target.value <= 5) {
+    if (support + event.target.value <= 5 && event.target.value >= 0) {
       setSupport(event.target.value);
     }
   };
