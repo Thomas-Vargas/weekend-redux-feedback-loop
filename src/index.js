@@ -10,6 +10,12 @@ const feedback = (state = {}, action) => {
     switch(action.type) {
         case 'SET_FEELING':
             return {...state, feeling: action.payload}
+        case 'SET_UNDERSTANDING':
+            return {...state, understanding: action.payload}
+        case 'SET_SUPPORTED':
+            return {...state, supported: action.payload}
+        case 'SET_COMMENT':
+            return {...state, comment: action.payload}
         default: 
             return state
     }
