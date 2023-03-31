@@ -7,7 +7,7 @@ const Review = () => {
   const history = useHistory();
   const feedback = useSelector(store => store.feedback)
 
-  const handleClick = () => {
+  const handleSubmit = () => {
     axios.post('/feedback', feedback)
       .then(response => {
         console.log(response);
@@ -18,6 +18,10 @@ const Review = () => {
       })
   }
 
+  const handleBack = () => {
+    history.push('/comment')
+  }
+
   return (
     <div>
       <h1>Review your feedback</h1>
@@ -25,7 +29,11 @@ const Review = () => {
       <p>Understanding: {feedback.understanding}</p>
       <p>Support: {feedback.supported}</p>
       <p>Comments: {feedback.comment}</p>
-      <Button onClick={handleClick} variant="contained">Submit</Button>
+      
+      <div className="flex">
+        <Button onClick={handleBack} variant="contained">Back</Button>
+        <Button onClick={handleSubmit} variant="contained">Submit</Button>
+      </div>
     </div>
   )
 }

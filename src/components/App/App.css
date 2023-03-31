@@ -25,6 +25,6 @@ h4 {
 .flex {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 10px;
 }
 
