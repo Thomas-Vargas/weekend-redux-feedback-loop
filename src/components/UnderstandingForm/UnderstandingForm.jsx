@@ -22,12 +22,19 @@ const UnderstandingForm = () => {
     }
   }
 
+  const handleChange = (event) => {
+    if (understanding + event.target.value <= 5) {
+      setUnderstanding(event.target.value);
+    }
+  }
+
+
   return (
     <>
       <h1>How well are you understanding the content?</h1>
       <div className="flex">
         <TextField
-          onChange={(event) => setUnderstanding(event.target.value)}
+          onChange={(event) => handleChange(event)}
           id="outlined-basic"
           label="Understanding?"
           variant="outlined"

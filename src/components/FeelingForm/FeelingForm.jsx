@@ -22,12 +22,18 @@ const FeelingForm = () => {
     }
   };
 
+  const handleChange = (event) => {
+    if (feeling + event.target.value <= 5) {
+      setFeeling(event.target.value)
+    }
+  }
+
   return (
     <>
       <h1>How are you feeling today?</h1>
       <div className="flex">
         <TextField
-          onChange={(event) => setFeeling(event.target.value)}
+          onChange={(event) => handleChange(event)}
           id="outlined-basic"
           label="What are you feeling?"
           variant="outlined"
