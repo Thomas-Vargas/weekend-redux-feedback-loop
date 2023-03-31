@@ -59,13 +59,14 @@ const FeelingForm = () => {
             type="number"
             value={feeling}
           />
-          <CardActions>
-            <div className="button-container">
+
+          <div className="button-container">
+            <CardActions>
               <Button onClick={handleClick} variant="contained">
                 Next
               </Button>
-            </div>
-          </CardActions>
+            </CardActions>
+          </div>
         </Card>
       </div>
     </>
