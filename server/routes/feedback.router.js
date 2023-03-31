@@ -1,8 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../modules/pool')
+const pool = require('../modules/pool');
 
-//set up router
+//GET
+router.get('/', (req, res) => {
+  const sqlText = `SELECT * FROM "feedback"`;
+
+  pool
+    .query(sqlText)
+    .then(result => {
+      res.send(result.rows)
+    })
+    .catch(error => {
+      res.sendStatus(500);
+      console.log('Error in get request at /feedback', error)
+    })
+})
+
+//POST
 router.post('/', (req, res) => {
   let newFeedback = req.body;
   const sqlText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")

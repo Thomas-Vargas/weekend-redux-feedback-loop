@@ -6,6 +6,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+const allFeedback = (state = [], action) => {
+    if (action.type === 'SET_ALL_FEEDBACK') {
+        return action.payload
+    }
+
+    return state;
+}
+
 const feedback = (state = {}, action) => {
     switch(action.type) {
         case 'SET_FEELING':
@@ -23,7 +31,8 @@ const feedback = (state = {}, action) => {
 
 const feedbackStore = createStore(
     combineReducers({
-        feedback
+        feedback,
+        allFeedback
     }),
     applyMiddleware(
         logger
