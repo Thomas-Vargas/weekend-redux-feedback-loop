@@ -8,7 +8,7 @@ const UnderstandingForm = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const handleClick = () => {
+  const handleNext = () => {
     if (understanding != '') {
       dispatch({
         type: 'SET_UNDERSTANDING',
@@ -22,12 +22,15 @@ const UnderstandingForm = () => {
     }
   }
 
+  const handleBack = () => {
+    history.push('/');
+  }
+
   const handleChange = (event) => {
     if (understanding + event.target.value <= 5) {
       setUnderstanding(event.target.value);
     }
   }
-
 
   return (
     <>
@@ -41,7 +44,8 @@ const UnderstandingForm = () => {
           type="number"
           value={understanding}
         />
-        <Button onClick={handleClick} variant="contained">Next</Button>
+        <Button onClick={handleBack} variant="contained">Back</Button>
+        <Button onClick={handleNext} variant="contained">Next</Button>
       </div>
     </>
   );

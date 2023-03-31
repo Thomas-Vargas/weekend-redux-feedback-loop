@@ -8,7 +8,7 @@ const CommentForm = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const handleClick = () => {
+  const handleNext = () => {
     if (comment != '') {
       dispatch({
         type: 'SET_COMMENT',
@@ -20,6 +20,10 @@ const CommentForm = () => {
     else {
       alert('Please provide input');
     }
+  }
+
+  const handleBack = () => {
+    history.push('/support')
   }
 
   return (
@@ -34,7 +38,8 @@ const CommentForm = () => {
           type="text"
           value={comment}
         />
-        <Button onClick={handleClick} variant="contained">Next</Button>
+        <Button onClick={handleBack} variant="contained">Back</Button>
+        <Button onClick={handleNext} variant="contained">Next</Button>
       </div>
     </>
   );

@@ -8,7 +8,7 @@ const SupportedForm = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const handleClick = () => {
+  const handleNext = () => {
     if (support != '') {
       dispatch({
         type: 'SET_SUPPORTED',
@@ -20,6 +20,10 @@ const SupportedForm = () => {
     else {
       alert('Please provide input.');
     }
+  }
+
+  const handleBack = () => {
+    history.push('/understanding');
   }
 
   const handleChange = (event) => {
@@ -41,7 +45,8 @@ const SupportedForm = () => {
           type="number"
           value={support}
         />
-        <Button onClick={handleClick} variant="contained">Next</Button>
+        <Button onClick={handleBack} variant="contained">Back</Button>
+        <Button onClick={handleNext} variant="contained">Next</Button>
       </div>
     </>
   );
