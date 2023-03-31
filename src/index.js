@@ -7,10 +7,12 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 const feedback = (state = {}, action) => {
-    if (action.type === 'SET_FEELING') {
-        return {...state, feeling: action.payload}
+    switch(action.type) {
+        case 'SET_FEELING':
+            return {...state, feeling: action.payload}
+        default: 
+            return state
     }
-    return state;
 };
 
 const feedbackStore = createStore(
