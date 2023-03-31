@@ -1,6 +1,13 @@
 import { TextField, Button } from "@mui/material";
+import { useHistory } from "react-router-dom";
 
 const UnderstandingForm = () => {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push('/support');
+  }
+
   return (
     <>
       <h1>How well are you understanding the content?</h1>
@@ -12,7 +19,7 @@ const UnderstandingForm = () => {
           variant="outlined"
           type="number"
         />
-        <Button variant="contained">Next</Button>
+        <Button onClick={handleClick} variant="contained">Next</Button>
       </div>
     </>
   );

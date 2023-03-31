@@ -6,7 +6,7 @@ const FeelingForm = () => {
 
   const handleClick = () => {
     console.log("hello");
-    history.push('/understanding-form')
+    history.push('/understanding')
   };
 
   return (
