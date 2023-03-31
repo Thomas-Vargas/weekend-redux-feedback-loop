@@ -5,7 +5,7 @@ const CommentForm = () => {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push('/support');
+    history.push('/review');
   }
 
   return (

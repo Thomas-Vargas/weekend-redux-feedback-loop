@@ -6,6 +6,7 @@ import { HashRouter as Router, Route, Link} from "react-router-dom";
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 import SupportedForm from '../SupportedForm/SupportedForm';
 import CommentForm from '../CommentsForm/ComentsForm';
+import Review from '../Review/Review';
 
 function App() {
 
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path='/comment' exact>
           <CommentForm />
+        </Route>
+        <Route path='/review' exact>
+          <Review />
         </Route>
       </Router>
     </div>
