@@ -22,12 +22,19 @@ const SupportedForm = () => {
     }
   }
 
+  const handleChange = (event) => {
+    if (support + event.target.value <= 5) {
+      setSupport(event.target.value)
+    }
+  }
+
+
   return (
     <>
       <h1>How well are you being supported?</h1>
       <div className="flex">
         <TextField
-          onChange={(event) => setSupport(event.target.value)}
+          onChange={(event) => handleChange(event)}
           id="outlined-basic"
           label="Support?"
           variant="outlined"
